@@ -1872,6 +1872,10 @@
     function handleAddToCartFromModal() {
       if (!validateVariantSelection()) return;
 
+      const addedName = activeProduct.name;
+      const addedColor = selectedColor;
+      const addedSize = selectedSize;
+
       addToCart({
         id: activeProduct.id,
         name: activeProduct.name,
@@ -1885,7 +1889,7 @@
 
       closeProductModal();
       toggleCartDrawer(true);
-      showToast(`Added ${activeProduct.name} (${selectedColor}, ${selectedSize}) to bag!`);
+      showToast(`Added ${addedName} (${addedColor}, ${addedSize}) to bag!`);
     }
 
     function handleBuyNowFromModal() {
